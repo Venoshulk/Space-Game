@@ -32,17 +32,49 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(player_cam.transform.forward * -1 * gunThrust);
         }
-        if (Input.GetButton("Jump"))
+        if (Input.GetButtonDown("Descend"))
         {
-            Debug.Log("space");
-            Vector3 forceToAdd = new Vector3(0, fuelThrust, 0);
-            rb.AddForce(forceToAdd);
+            doubleTapTimer = Time.time + doubleTapDelay;
+            hasDashed = false;
+
+            while (Time.time < doubleTapTimer && !hasDashed)
+            {
+                if (Input.GetButtonDown("Descend") && Time.time < doubleTapTimer)
+                {
+                    Debug.Log("Descend with dash");
+                    Vector3 forceToAdd = new Vector3(0, fuelThrust * fuelThrust * -1, 0);
+                    rb.AddForce(forceToAdd);
+                    hasDashed = true;
+                }
+                else
+                {
+                    Debug.Log("Descend no dash");
+                    Vector3 forceToAdd = new Vector3(0, fuelThrust * -1, 0);
+                    rb.AddForce(forceToAdd);
+                }
+            }
         }
-        if (Input.GetButton("Descend"))
+        if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("shift");
-            Vector3 forceToAdd = new Vector3(0, fuelThrust * -1, 0);
-            rb.AddForce(forceToAdd);
+            doubleTapTimer = Time.time + doubleTapDelay;
+            hasDashed = false;
+
+            while (Time.time < doubleTapTimer && !hasDashed)
+            {
+                if (Input.GetButtonDown("Jump") && Time.time < doubleTapTimer)
+                {
+                    Debug.Log("jump with dash");
+                    Vector3 forceToAdd = new Vector3(0, fuelThrust * fuelThrust, 0);
+                    rb.AddForce(forceToAdd);
+                    hasDashed = true;
+                }
+                else
+                {
+                    Debug.Log("jump no dash");
+                    Vector3 forceToAdd = new Vector3(0, fuelThrust, 0);
+                    rb.AddForce(forceToAdd);
+                }
+            }
         }
         if (Input.GetButtonDown("Left"))
         {
@@ -123,6 +155,18 @@ public class PlayerMovement : MonoBehaviour
                     rb.AddForce(player_cam.transform.forward * -1 * fuelThrust);
                 }
             }
+        }
+        if (Input.GetButton("Jump"))
+        {
+            Debug.Log("space");
+            Vector3 forceToAdd = new Vector3(0, fuelThrust, 0);
+            rb.AddForce(forceToAdd);
+        }
+        if (Input.GetButton("Descend"))
+        {
+            Debug.Log("shift");
+            Vector3 forceToAdd = new Vector3(0, fuelThrust * -1, 0);
+            rb.AddForce(forceToAdd);
         }
         if (Input.GetButton("Left"))
         {
