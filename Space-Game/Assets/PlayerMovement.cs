@@ -106,7 +106,7 @@ public class PlayerMovement : MonoBehaviour
         //lateral movement logic end
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        else if (Input.GetButtonDown("Left"))
+        if (Input.GetButtonDown("Left"))
         {
             doubleTapTimer = Time.time + doubleTapDelay;
             hasDashed = false;
