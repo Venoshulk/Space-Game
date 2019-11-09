@@ -13,15 +13,24 @@ public class PlayerMovement : MonoBehaviour
     public float fuelThrust;
     public float fuelTotal;
     public float fuelConsumption;
+    public float currentFuel;
+    public float fuelRegen;
+
     private float doubleTapTimer;
     public float doubleTapDelay;
+
     private bool hasDashed = false;
+    private const float EMPTY = 0f;
+
+    private const string JUMP = "Jump";
+    private const string SHIFT = "Descend";
 
     // Start is called before the first frame update
     void Start()
     {
         fuelTotal = 100f;
         fuelConsumption = 0.2f;
+        currentFuel = fuelTotal;
         rb = player_body.GetComponent<Rigidbody>();
     }
 
@@ -32,7 +41,12 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(player_cam.transform.forward * -1 * gunThrust);
         }
-        if (Input.GetButtonDown("Descend"))
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //lateral movement logic start
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        if (Input.GetButtonDown(SHIFT) && currentFuel > EMPTY)
         {
             doubleTapTimer = Time.time + doubleTapDelay;
             hasDashed = false;
@@ -54,7 +68,12 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-        if (Input.GetButtonDown("Jump"))
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //lateral movement logic start
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        else if (Input.GetButtonDown(JUMP) && currentFuel > EMPTY)
         {
             doubleTapTimer = Time.time + doubleTapDelay;
             hasDashed = false;
@@ -75,7 +94,18 @@ public class PlayerMovement : MonoBehaviour
                     rb.AddForce(forceToAdd);
                 }
             }
+
         }
+        //if shift and space is not pressed
+        else if (!Input.GetButton(JUMP) && !Input.GetButton(SHIFT))
+        {
+            currentFuel = currentFuel + fuelRegen < fuelTotal ? currentFuel += fuelRegen : fuelTotal;
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //lateral movement logic end
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         if (Input.GetButtonDown("Left"))
         {
             doubleTapTimer = Time.time + doubleTapDelay;
@@ -156,17 +186,20 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-        if (Input.GetButton("Jump"))
+        if (Input.GetButton("Jump") && currentFuel > EMPTY)
         {
             Debug.Log("space");
             Vector3 forceToAdd = new Vector3(0, fuelThrust, 0);
             rb.AddForce(forceToAdd);
+            currentFuel = currentFuel - fuelConsumption > EMPTY ? currentFuel - fuelConsumption : EMPTY;
+
         }
-        if (Input.GetButton("Descend"))
+        if (Input.GetButton("Descend") && currentFuel > EMPTY)
         {
             Debug.Log("shift");
             Vector3 forceToAdd = new Vector3(0, fuelThrust * -1, 0);
             rb.AddForce(forceToAdd);
+            currentFuel = currentFuel - fuelConsumption > EMPTY ? currentFuel - fuelConsumption : EMPTY;
         }
         if (Input.GetButton("Left"))
         {
