@@ -19,11 +19,11 @@ public class PlayerWeapons : MonoBehaviour
         public Weapon(float shootingDelay, GameObject gunGraphic, GameObject gunBullet, GameObject camera)
         {
             shootDelay = shootingDelay;
-            weaponGraphic = gunGraphic;
             projectile = gunBullet;
 
-            Vector3 spawnLocation = new Vector3(camera.transform.position.x + 0.5f, camera.transform.position.y - 0.5f, camera.transform.position.z + 0.5f);
-            Instantiate(gunGraphic, spawnLocation, camera.transform.rotation, camera.transform);
+            Vector3 spawnLocation = new Vector3(camera.transform.position.x + 0.5f, camera.transform.position.y - 0.5f, camera.transform.position.z + 0.8f);
+            weaponGraphic = Instantiate(gunGraphic, spawnLocation, camera.transform.rotation, camera.transform);
+            weaponGraphic.transform.localRotation = Quaternion.Euler(0, -90 , 0);
         }
 
         public void fireWeapon(GameObject defaultCam)
