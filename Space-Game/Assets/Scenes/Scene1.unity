@@ -475,3 +475,5 @@ MonoBehaviour:
   defaultBullet: {fileID: 2088035684718140680, guid: 1ac569a5234c975418692c4ab0b122b3,
     type: 3}
   defaultCam: {fileID: 983169607}
+  defaultGunGraphic: {fileID: 5409756796998082174, guid: add55ffdb30425f4f855440df17775fa,
+    type: 3}

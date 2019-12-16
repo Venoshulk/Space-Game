@@ -15,10 +15,15 @@ public class PlayerWeapons : MonoBehaviour
         private float shootTimer; //The time you can shoot again (used with shoot delay)
         private float shootOffSet = 1f; //The position offset of the bullet
 
-        //Set specific model parameters
-        public Weapon(float shootingDelay)
+        //Sets weapon parameters/models
+        public Weapon(float shootingDelay, GameObject gunGraphic, GameObject gunBullet, GameObject camera)
         {
             shootDelay = shootingDelay;
+            weaponGraphic = gunGraphic;
+            projectile = gunBullet;
+
+            Vector3 spawnLocation = new Vector3(camera.transform.position.x + 0.5f, camera.transform.position.y - 0.5f, camera.transform.position.z + 0.5f);
+            Instantiate(gunGraphic, spawnLocation, camera.transform.rotation, camera.transform);
         }
 
         public void fireWeapon(GameObject defaultCam)
@@ -41,14 +46,15 @@ public class PlayerWeapons : MonoBehaviour
 
     public GameObject defaultBullet;
     public GameObject defaultCam;
+    public GameObject defaultGunGraphic;
 
-    Weapon defaultWeapon = new Weapon(0.02f);
+    Weapon defaultWeapon;
     Weapon currentWeapon;
     
 
     private void Start()
     {
-        defaultWeapon.projectile = defaultBullet;
+        defaultWeapon = new Weapon(0.02f, defaultGunGraphic, defaultBullet, defaultCam);
         currentWeapon = defaultWeapon;
     }
 
