@@ -48,8 +48,8 @@ public class PlayerWeapons : MonoBehaviour
     public GameObject defaultCam;
     public GameObject defaultGunGraphic;
 
-    Weapon defaultWeapon;
-    Weapon currentWeapon;
+    public Weapon defaultWeapon;
+    public Weapon currentWeapon;
     
 
     private void Start()
