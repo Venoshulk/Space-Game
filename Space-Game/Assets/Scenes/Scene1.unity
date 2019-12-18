@@ -549,5 +549,17 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2026889857}
+    - target: {fileID: 702716622314849490, guid: cdd968bd803e0ac4eb469cbc19a3fc16,
+        type: 3}
+      propertyPath: PowerUpWeapon
+      value: 
+      objectReference: {fileID: 7267732142246211667, guid: 3711ebef4f5311348b58a4255ad19d85,
+        type: 3}
+    - target: {fileID: 702716622314849490, guid: cdd968bd803e0ac4eb469cbc19a3fc16,
+        type: 3}
+      propertyPath: PowerUpBullet
+      value: 
+      objectReference: {fileID: 6619714317484530748, guid: 7c589e26c82932d4a86fb426c805f283,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdd968bd803e0ac4eb469cbc19a3fc16, type: 3}

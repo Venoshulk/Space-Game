@@ -16,10 +16,11 @@ public class PlayerWeapons : MonoBehaviour
         private float shootOffSet = 1f; //The position offset of the bullet
 
         //Sets weapon parameters/models
-        public Weapon(float shootingDelay, GameObject gunGraphic, GameObject gunBullet, GameObject camera)
+        public Weapon(float shootingDelay, GameObject gunGraphic, GameObject gunBullet)
         {
             shootDelay = shootingDelay;
             projectile = gunBullet;
+            Camera camera = Camera.main;
 
             Vector3 spawnLocation = new Vector3(camera.transform.position.x + 0.5f, camera.transform.position.y - 0.5f, camera.transform.position.z + 0.8f);
             weaponGraphic = Instantiate(gunGraphic, spawnLocation, camera.transform.rotation, camera.transform);
@@ -35,7 +36,7 @@ public class PlayerWeapons : MonoBehaviour
                 shootTimer = Time.time + shootDelay;
                 
                 //create object (projectile) in front of player by using the camera position
-                Instantiate(projectile, defaultCam.transform.position + defaultCam.transform.forward * shootOffSet, defaultCam.transform.rotation);
+                Instantiate(projectile, weaponGraphic.transform.position + defaultCam.transform.forward * shootOffSet, defaultCam.transform.rotation);
             }
             else
             {
@@ -54,7 +55,7 @@ public class PlayerWeapons : MonoBehaviour
 
     private void Start()
     {
-        defaultWeapon = new Weapon(0.02f, defaultGunGraphic, defaultBullet, defaultCam);
+        defaultWeapon = new Weapon(0.02f, defaultGunGraphic, defaultBullet);
         currentWeapon = defaultWeapon;
     }
 
