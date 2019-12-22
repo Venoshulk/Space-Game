@@ -13,7 +13,8 @@ public class PlayerWeapons : MonoBehaviour
         public float weaponDuration; //The duration of the powerup
         public float shootDelay; //The delay between shots
         private float shootTimer; //The time you can shoot again (used with shoot delay)
-        private float shootOffSet = 1f; //The position offset of the bullet
+        private float shootOffSetZ = 0.5f; //The position offset of the bullet
+        private float shootOffSetY = 0.2f;
 
         //Sets weapon parameters/models
         public Weapon(float shootingDelay, GameObject gunGraphic, GameObject gunBullet)
@@ -22,6 +23,7 @@ public class PlayerWeapons : MonoBehaviour
             projectile = gunBullet;
             Camera camera = Camera.main;
 
+            //Spawn in the weapon and rotate the model accordingly
             Vector3 spawnLocation = new Vector3(camera.transform.position.x + 0.5f, camera.transform.position.y - 0.5f, camera.transform.position.z + 0.8f);
             weaponGraphic = Instantiate(gunGraphic, spawnLocation, camera.transform.rotation, camera.transform);
             weaponGraphic.transform.localRotation = Quaternion.Euler(0, -90 , 0);
@@ -34,14 +36,20 @@ public class PlayerWeapons : MonoBehaviour
                 Debug.Log("Shoot");
                 //Reset the shoot timer
                 shootTimer = Time.time + shootDelay;
-                
+
                 //create object (projectile) in front of player by using the camera position
-                Instantiate(projectile, weaponGraphic.transform.position + defaultCam.transform.forward * shootOffSet, defaultCam.transform.rotation);
+                Vector3 bulletOffset = new Vector3(0, shootOffSetY, shootOffSetZ);
+                Instantiate(projectile, weaponGraphic.transform.position + bulletOffset, defaultCam.transform.rotation);
             }
             else
             {
                 Debug.Log("Wait!");
             }
+        }
+
+        public void deleteWeapon()
+        {
+            Destroy(this.weaponGraphic);
         }
     }
 

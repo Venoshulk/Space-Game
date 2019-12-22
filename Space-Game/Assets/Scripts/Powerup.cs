@@ -12,6 +12,7 @@ public class Powerup : MonoBehaviour
     {
         if(other.gameObject == player) //checks for player collision
         {
+            other.gameObject.GetComponent<PlayerWeapons>().currentWeapon.deleteWeapon(); //Deletes old weapon graphic
             PlayerWeapons.Weapon RocketLauncher = new PlayerWeapons.Weapon(0.5f, PowerUpWeapon, PowerUpBullet); //creates a new weapon object
             other.gameObject.GetComponent<PlayerWeapons>().currentWeapon = RocketLauncher; //sets current weapon to the created object
             Destroy(this.gameObject);
