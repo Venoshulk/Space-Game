@@ -175,9 +175,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootDelay: 1
-  shootOffSetX: 0.5
+  shootOffSetX: 1
   shootOffSetY: 0.1
-  shootOffSetZ: 0.5
+  shootOffSetZ: 1
   bullet: {fileID: 8313303064969817698, guid: 7c589e26c82932d4a86fb426c805f283, type: 3}
   mainCam: {fileID: 983169607}
 --- !u!1 &455200194
@@ -738,7 +738,7 @@ PrefabInstance:
     - target: {fileID: 702716622314849502, guid: cdd968bd803e0ac4eb469cbc19a3fc16,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.452
+      value: -5.25
       objectReference: {fileID: 0}
     - target: {fileID: 702716622314849502, guid: cdd968bd803e0ac4eb469cbc19a3fc16,
         type: 3}
