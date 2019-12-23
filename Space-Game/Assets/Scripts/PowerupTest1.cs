@@ -2,31 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerupTest1 : Powerups
+/*  THIS IS AN EXAMPLE OF A CHILD INSTANCE OF THE POEWRUPS CLASS THAT POWERS UP FOR A GIVEN TIME.   */
+
+
+public class PowerupTest1 : Powerups            //Inherites from the powerups class.
 {
     //Properties
-    private int _Time = 5;
+    private int _Duration = 8;                  //In seconds, hown long this will last.
+    private double Boost = 5;                   //The multiplier applied and divided to a stat.
+    PlayerMovement Player;                      //The player itself.
 
     //Constructor
     public PowerupTest1()
-    {   SetTimer(_Time);
+    {   SetTimer(_Duration);
+        SetMultiplier(Boost);
     }
 
-    //Check for collision, if so, apply power up.
-    void OnTriggerEnter(Collider other)
+    //Methods
+    void OnTriggerEnter(Collider other)         //Check for collision, if so, apply power up.
     {   Debug.Log("Is Player?");
-        if(other.CompareTag("Player"))          //Check collision by collider's tag.
+        if (other.CompareTag("Player"))         //Check collision by collider's tag.
         {   Debug.Log("Power up!");
+            Player = other.GetComponent<PlayerMovement>();
             StartCoroutine(ApplyEffects());     //StartCoroutine is required in order to call IEnumerator.
         }
     }
 
-    //Apply powerup for X time, and then remove effects.
-    IEnumerator ApplyEffects()
-    {   Debug.Log("Powered up!");
+    IEnumerator ApplyEffects()      //Apply powerup, after player collison for X time, and then remove effects.
+    {   PowerUp();
         yield return new WaitForSeconds(GetTimer());        //Before removing buffs, wait.
-        Debug.Log("Powered up off!");
-        //Destroy powerup on field.
+        PowerDown();
         Destroy(gameObject);                                //Remove the object.
     } 
+
+    private void PowerUp()                      //Method unique per powerup, here is the actual power up.
+    {   Player.fuelThrust = Player.fuelThrust * (float)GetMultiplier();
+        Debug.Log("Powered up!");
+    }
+
+    private void PowerDown()                    //Powers down after timer, respective to PowerUp's multiplier.
+    {   Player.fuelThrust = Player.fuelThrust / (float)GetMultiplier();
+        Debug.Log("Powered up off!");
+    }
 }
