@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7129259630478110256}
   - component: {fileID: -2970360591549387485}
   m_Layer: 0
-  m_Name: RocketLauncherBullet
+  m_Name: RocketBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
