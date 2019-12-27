@@ -4,14 +4,14 @@ using UnityEngine;
 
 /*  THIS IS AN EXAMPLE OF A CHILD INSTANCE OF THE POWER UPS CLASS THAT PERMANENTLY POWERS UP.   */
 
-public class PowerupTest2 : Powerups
+public class PowerupsPermanent : Powerups
 {
     //Properties
     private double Boost = 20;                  //The multiplier applied and divided to a stat.
     PlayerMovement Player;                      //The player itself.
 
     //Constructor
-    public PowerupTest2()
+    public PowerupsPermanent()
     {   SetMultiplier(Boost);
     }
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3671917736022464185}
   - component: {fileID: 3671917736022464190}
   - component: {fileID: 3671917736022464191}
-  - component: {fileID: 3671917736022464188}
+  - component: {fileID: 8101333604466948256}
   m_Layer: 0
   m_Name: Powerup over time
   m_TagString: Untagged
@@ -93,7 +93,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.7174349
   m_Center: {x: 0.06546688, y: 0, z: 0}
---- !u!114 &3671917736022464188
+--- !u!114 &8101333604466948256
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

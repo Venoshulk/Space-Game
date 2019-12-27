@@ -5,7 +5,7 @@ using UnityEngine;
 /*  THIS IS AN EXAMPLE OF A CHILD INSTANCE OF THE POEWRUPS CLASS THAT POWERS UP FOR A GIVEN TIME.   */
 
 
-public class PowerupTest1 : Powerups            //Inherites from the powerups class.
+public class PowerupsTemp : Powerups            //Inherites from the powerups class.
 {
     //Properties
     private int _Duration = 8;                  //In seconds, hown long this will last.
@@ -13,7 +13,7 @@ public class PowerupTest1 : Powerups            //Inherites from the powerups cl
     PlayerMovement Player;                      //The player itself.
 
     //Constructor
-    public PowerupTest1()
+    public PowerupsTemp()
     {   SetTimer(_Duration);
         SetMultiplier(Boost);
     }
