@@ -16,11 +16,15 @@ public class WeaponBehavior : MonoBehaviour
     public GameObject mainCam;
     private GameObject currentBullet;
 
+    Animator animator;
+
     private void Start()
     {
         //Set the current settings to the default
         currentBullet = defaultBullet;
         currentShootDelay = defaultShootDelay;
+        //Set animator component
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,6 +33,11 @@ public class WeaponBehavior : MonoBehaviour
         if (Input.GetButton("Fire1"))
         {
             FireWeapon();
+            animator.SetTrigger("isShooting");
+        }
+        else
+        {
+            animator.ResetTrigger("isShooting");
         }
     }
 
@@ -40,9 +49,14 @@ public class WeaponBehavior : MonoBehaviour
             //Reset the shoot timer
             shootTimer = Time.time + currentShootDelay;
 
-            //create object (projectile) in front of player by using the camera position
-            Vector3 bulletOffset = new Vector3(0, shootOffSetY, shootOffSetZ);
-            Instantiate(currentBullet, transform.position + bulletOffset, mainCam.transform.rotation);
+            //create object (projectile) in front of player by using the camera position for every gun on player
+            for(int i = 0; i < transform.childCount; i++)
+            {
+                Transform gun = transform.GetChild(i);
+                Vector3 bulletOffset = new Vector3(shootOffSetX, shootOffSetY, shootOffSetZ);
+                Instantiate(currentBullet, gun.position + bulletOffset, mainCam.transform.rotation);
+            }
+            
         }
         else
         {
