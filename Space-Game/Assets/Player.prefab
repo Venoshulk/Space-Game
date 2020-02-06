@@ -31,6 +31,7 @@ GameObject:
   - component: {fileID: 6058932017238534294}
   - component: {fileID: 6058932017238534295}
   - component: {fileID: 6058932017238534288}
+  - component: {fileID: 3132568102204398022}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -121,6 +122,15 @@ MonoBehaviour:
   offsety: 0
   offsetz: 0
   sens: 10
+--- !u!45 &3132568102204398022
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6058932017238534289}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &6058932017482476016
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,11 +285,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6058932017238534293}
     m_Modifications:
-    - target: {fileID: 5409756796998082174, guid: add55ffdb30425f4f855440df17775fa,
-        type: 3}
-      propertyPath: m_Name
-      value: DefaultGun
-      objectReference: {fileID: 0}
     - target: {fileID: 4226111563559757385, guid: add55ffdb30425f4f855440df17775fa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -335,6 +340,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5409756796998082174, guid: add55ffdb30425f4f855440df17775fa,
+        type: 3}
+      propertyPath: m_Name
+      value: DefaultGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274499268771161359, guid: add55ffdb30425f4f855440df17775fa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.39699936
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274499268771161359, guid: add55ffdb30425f4f855440df17775fa,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0070004463
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274499268771161359, guid: add55ffdb30425f4f855440df17775fa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01799995
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310200799023832799, guid: add55ffdb30425f4f855440df17775fa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.39699936
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310200799023832799, guid: add55ffdb30425f4f855440df17775fa,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0070004463
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310200799023832799, guid: add55ffdb30425f4f855440df17775fa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01799995
+      objectReference: {fileID: 0}
     - target: {fileID: 8022205104179657443, guid: add55ffdb30425f4f855440df17775fa,
         type: 3}
       propertyPath: mainCam
@@ -344,36 +384,6 @@ PrefabInstance:
         type: 3}
       propertyPath: defaultShootDelay
       value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6310200799023832799, guid: add55ffdb30425f4f855440df17775fa,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.39699936
-      objectReference: {fileID: 0}
-    - target: {fileID: 6310200799023832799, guid: add55ffdb30425f4f855440df17775fa,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0070004463
-      objectReference: {fileID: 0}
-    - target: {fileID: 6310200799023832799, guid: add55ffdb30425f4f855440df17775fa,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.01799995
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274499268771161359, guid: add55ffdb30425f4f855440df17775fa,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.39699936
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274499268771161359, guid: add55ffdb30425f4f855440df17775fa,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0070004463
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274499268771161359, guid: add55ffdb30425f4f855440df17775fa,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.01799995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: add55ffdb30425f4f855440df17775fa, type: 3}
