@@ -16,15 +16,16 @@ public class WeaponBehavior : MonoBehaviour
     public GameObject mainCam;
     private GameObject currentBullet;
 
-    Animator animator;
+    Animator gunAnimator;
+    public Animator playerAnimator;
 
     private void Start()
     {
         //Set the current settings to the default
         currentBullet = defaultBullet;
         currentShootDelay = defaultShootDelay;
-        //Set animator component
-        animator = GetComponent<Animator>();
+        //Set gunAnimator component
+        gunAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -33,11 +34,13 @@ public class WeaponBehavior : MonoBehaviour
         if (Input.GetButton("Fire1"))
         {
             FireWeapon();
-            animator.SetTrigger("isShooting");
+            gunAnimator.SetTrigger("isShooting");
+            playerAnimator.SetTrigger("isShooting");
         }
         else
         {
-            animator.ResetTrigger("isShooting");
+            gunAnimator.ResetTrigger("isShooting");
+            playerAnimator.ResetTrigger("isShooting");
         }
     }
 
