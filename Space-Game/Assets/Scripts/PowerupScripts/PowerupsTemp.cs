@@ -9,7 +9,7 @@ public class PowerupsTemp : Powerups            //Inherites from the powerups cl
 {
     //Properties
     private int _Duration = 8;                  //In seconds, hown long this will last.
-    private double Boost = 5;                   //The multiplier applied and divided to a stat.
+    public double Boost = 1.5;                   //The multiplier applied and divided to a stat.
     PlayerMovement Player;                      //The player itself.
 
     //Constructor
