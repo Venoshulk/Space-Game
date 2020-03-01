@@ -652,6 +652,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4237183534661071581, guid: 174404cd777fd7448a70180cc93b7815,
+        type: 3}
+      propertyPath: animationSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237183534661071581, guid: 174404cd777fd7448a70180cc93b7815,
+        type: 3}
+      propertyPath: weaponShootDelay
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 174404cd777fd7448a70180cc93b7815, type: 3}
 --- !u!1001 &6058932017125812155

@@ -67,11 +67,12 @@ public class WeaponBehavior : MonoBehaviour
         }
     }
 
-    public void ChangeBullet(GameObject bullet, float shootDelay, float duration)
+    public void ChangeBullet(GameObject bullet, float shootDelay, float duration, float animationSpeed)
     {
         //Set the power up weapon into the current settings
         currentBullet = bullet;
         currentShootDelay = shootDelay;
+        gunAnimator.SetFloat("animationSpeed", animationSpeed);
 
         //Starts a function that counts down the powerup duration
         StartCoroutine(DefaultBullet(duration));
@@ -83,5 +84,6 @@ public class WeaponBehavior : MonoBehaviour
         yield return new WaitForSeconds(duration);
         currentBullet = defaultBullet;
         currentShootDelay = defaultShootDelay;
+        gunAnimator.SetFloat("animationSpeed", 1);
     }
 }
