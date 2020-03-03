@@ -7,12 +7,7 @@ public class Powerups : MonoBehaviour
     //Properties
     private int _Timer = 0;
     private double _Multiplier = 0;
-
-    //Constructor
-    public Powerups()
-    {   SetTimer(_Timer);
-        SetMultiplier(_Multiplier);
-    }
+    private int _ThisScoreValue = 0;
 
     //Get & Set functions
     public void SetTimer(int Time)
@@ -24,10 +19,25 @@ public class Powerups : MonoBehaviour
     }
 
     public void SetMultiplier(double Multiplier)
-    {   _Multiplier = Multiplier;
+    {   if(Multiplier != 0)
+            _Multiplier = Multiplier;
     }
 
     public double GetMultiplier()
     {   return _Multiplier;
+    }
+
+    public void SetThisScoreValue(int value = 0)
+    {   if(value > 0)
+            _ThisScoreValue = value;
+    }
+
+    public int GetThisScoreValue()
+    {   return _ThisScoreValue;
+    }
+
+    //Methods
+    public void AddThisScore() 
+    {   PlayerScore.ModifyScore(_ThisScoreValue);
     }
 }

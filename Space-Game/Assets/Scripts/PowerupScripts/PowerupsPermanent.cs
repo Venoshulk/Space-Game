@@ -4,30 +4,33 @@ using UnityEngine;
 
 /*  THIS IS AN EXAMPLE OF A CHILD INSTANCE OF THE POWER UPS CLASS THAT PERMANENTLY POWERS UP.   */
 
+
 public class PowerupsPermanent : Powerups
 {
     //Properties
-    private double Boost = 20;                  //The multiplier applied and divided to a stat.
+    private double _Multiplier = 40;            //The multiplier applied and divided to a stat.
+    private int _ThisScoreValue = 10;           //Score value for collecting this powerup. *TEMP*
     PlayerMovement Player;                      //The player itself.
 
-    //Constructor
-    public PowerupsPermanent()
-    {   SetMultiplier(Boost);
+    //Constructor (Start)
+    public void Start()
+    {   SetMultiplier(_Multiplier);
+        SetThisScoreValue(_ThisScoreValue);
     }
 
     //Methods
     void OnTriggerEnter(Collider other)         //Check for collision, if so, apply power up.
-    {   Debug.Log("Is Player?");
-        if (other.CompareTag("Player"))         //Check collision by collider's tag.
+    {   if (other.CompareTag("Player"))         //Check collision by collider's tag.
         {   Debug.Log("Power up!");
             Player = other.GetComponent<PlayerMovement>();
-            ApplyEffects(); 
+            ApplyEffects();
+            AddThisScore();
         }
     }
 
-    private void ApplyEffects()      //Apply powerup, after player collison for X time, do not remove effects.
+    private void ApplyEffects()                 //Apply powerup, after player collison for X time, do not remove effects.
     {   PowerUp();
-        Destroy(gameObject);                                //Remove the object.
+        Destroy(gameObject);                    //Remove this powerup immediately afterwards.
     }
 
     private void PowerUp()                      //Method unique per powerup, here is the actual power up.
