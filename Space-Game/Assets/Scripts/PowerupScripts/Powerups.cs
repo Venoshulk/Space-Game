@@ -39,5 +39,6 @@ public class Powerups : MonoBehaviour
     //Methods
     public void AddThisScore() 
     {   PlayerScore.ModifyScore(_ThisScoreValue);
+        Debug.Log(PlayerScore.GetScoreValue());
     }
 }

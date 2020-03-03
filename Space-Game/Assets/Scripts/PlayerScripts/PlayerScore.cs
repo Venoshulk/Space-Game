@@ -5,31 +5,31 @@ using UnityEngine.UI;
 
 public class PlayerScore : MonoBehaviour
 {
-    private static int scoreValue;
     private const string PREFIX = "Score: ";
-    private Text scoreText;
+    private static int _scoreValue;
+    private Text _scoreText;
 
     // Start is called before the first frame update
     void Start()
-    {   scoreValue = 0;                                 //Default value should start at 0.        
-        scoreText = GetComponent<Text>();               //Grab text component for the UI.
+    {   _scoreValue = 0;                                 //Default value should start at 0.        
+        _scoreText = GetComponent<Text>();               //Grab text component for the UI.
     }
 
     // Update is called once per frame
     void Update()
-    {   scoreText.text = PREFIX + scoreValue;
+    {   _scoreText.text = PREFIX + _scoreValue;
     }
 
     //Getter/Setter
-    public int GetScoreValue()
-    {   return scoreValue;
+    public static int GetScoreValue()
+    {   return _scoreValue;
     }
 
     //Methods
     public static void ModifyScore(int value)
-    {   if (scoreValue + value > 0)                     //Do not allow negative score.
-            scoreValue += value;
-        else 
-            scoreValue = 0;
+    {   if (_scoreValue + value > 0)                     //Do not allow negative score.
+            _scoreValue += value;
+        else
+            _scoreValue = 0;
     }
 }
