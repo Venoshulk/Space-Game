@@ -539,11 +539,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 734391093770330515, guid: 6c68a8e0bd0458e4cb323ccb91ae11ce,
-        type: 3}
-      propertyPath: m_Name
-      value: UI
-      objectReference: {fileID: 0}
     - target: {fileID: 734391093770330527, guid: 6c68a8e0bd0458e4cb323ccb91ae11ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -648,6 +643,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 734391093770330515, guid: 6c68a8e0bd0458e4cb323ccb91ae11ce,
+        type: 3}
+      propertyPath: m_Name
+      value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 734391095176003029, guid: 6c68a8e0bd0458e4cb323ccb91ae11ce,
         type: 3}
@@ -754,6 +754,12 @@ PrefabInstance:
       propertyPath: weaponShootDelay
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 4237183534661071581, guid: 174404cd777fd7448a70180cc93b7815,
+        type: 3}
+      propertyPath: PowerUpBullet
+      value: 
+      objectReference: {fileID: 1419723180949275133, guid: fb603d05c53514e49a084701f35c1d0d,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 174404cd777fd7448a70180cc93b7815, type: 3}
 --- !u!1001 &6058932017125812155
@@ -763,6 +769,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6058932017482476016, guid: 2abffe98289e2a540889e08b8a7b6102,
         type: 3}
       propertyPath: m_Name
@@ -838,6 +848,13 @@ PrefabInstance:
       propertyPath: playerAnimator
       value: 
       objectReference: {fileID: 1189396649}
+    - target: {fileID: 4269763846524880083, guid: 2abffe98289e2a540889e08b8a7b6102,
+        type: 3}
+      propertyPath: defaultBullet
+      value: 
+      objectReference: {fileID: 2150163436686169333, guid: 2d344f24fa802954b9fcc73fcaa135f1,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 3132568102204398022, guid: 2abffe98289e2a540889e08b8a7b6102, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 2abffe98289e2a540889e08b8a7b6102, type: 3}
