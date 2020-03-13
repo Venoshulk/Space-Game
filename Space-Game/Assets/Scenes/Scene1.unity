@@ -255,10 +255,10 @@ GameObject:
   - component: {fileID: 743971829}
   - component: {fileID: 743971828}
   - component: {fileID: 743971827}
-  - component: {fileID: 743971832}
   - component: {fileID: 743971833}
+  - component: {fileID: 743971832}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -291,7 +291,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 5
   m_Center: {x: 0, y: 0.28249326, z: 0}
 --- !u!23 &743971829
 MeshRenderer:
@@ -353,8 +353,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &743971832
-MeshCollider:
+--- !u!135 &743971832
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -363,10 +363,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &743971833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,6 +732,7 @@ GameObject:
   - component: {fileID: 2026889863}
   - component: {fileID: 2026889862}
   - component: {fileID: 2026889861}
+  - component: {fileID: 2026889866}
   - component: {fileID: 2026889860}
   - component: {fileID: 2026889859}
   - component: {fileID: 2026889858}
@@ -793,7 +793,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &2026889861
 CapsuleCollider:
@@ -887,6 +887,20 @@ MonoBehaviour:
   defaultCam: {fileID: 983169607}
   defaultGunGraphic: {fileID: 5409756796998082174, guid: add55ffdb30425f4f855440df17775fa,
     type: 3}
+--- !u!136 &2026889866
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026889857}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2044464739
 GameObject:
   m_ObjectHideFlags: 0
