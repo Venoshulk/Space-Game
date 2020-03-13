@@ -144,7 +144,6 @@ GameObject:
   - component: {fileID: 6058932017482476020}
   - component: {fileID: 6058932017482476021}
   - component: {fileID: 6058932017482476009}
-  - component: {fileID: 6058932017482476022}
   - component: {fileID: 6058932017482476023}
   m_Layer: 0
   m_Name: Player
@@ -243,20 +242,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6058932017482476022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6058932017482476016}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a77f32509cc52d4ebbbe8282e389cb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 0
-  currentHealth: 0
 --- !u!114 &6058932017482476023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +263,7 @@ MonoBehaviour:
   currentFuel: 100
   fuelRegen: 1
   doubleTapDelay: 0.1
+  playerAnimator: {fileID: 0}
 --- !u!1001 &6058932016724835888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -345,36 +331,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: DefaultGun
       objectReference: {fileID: 0}
-    - target: {fileID: 6274499268771161359, guid: add55ffdb30425f4f855440df17775fa,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.39699936
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274499268771161359, guid: add55ffdb30425f4f855440df17775fa,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0070004463
-      objectReference: {fileID: 0}
-    - target: {fileID: 6274499268771161359, guid: add55ffdb30425f4f855440df17775fa,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.01799995
-      objectReference: {fileID: 0}
-    - target: {fileID: 6310200799023832799, guid: add55ffdb30425f4f855440df17775fa,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.39699936
-      objectReference: {fileID: 0}
-    - target: {fileID: 6310200799023832799, guid: add55ffdb30425f4f855440df17775fa,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0070004463
-      objectReference: {fileID: 0}
-    - target: {fileID: 6310200799023832799, guid: add55ffdb30425f4f855440df17775fa,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.01799995
-      objectReference: {fileID: 0}
     - target: {fileID: 8022205104179657443, guid: add55ffdb30425f4f855440df17775fa,
         type: 3}
       propertyPath: mainCam
@@ -384,6 +340,36 @@ PrefabInstance:
         type: 3}
       propertyPath: defaultShootDelay
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274499268771161359, guid: add55ffdb30425f4f855440df17775fa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.39699936
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274499268771161359, guid: add55ffdb30425f4f855440df17775fa,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0070004463
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274499268771161359, guid: add55ffdb30425f4f855440df17775fa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01799995
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310200799023832799, guid: add55ffdb30425f4f855440df17775fa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.39699936
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310200799023832799, guid: add55ffdb30425f4f855440df17775fa,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0070004463
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310200799023832799, guid: add55ffdb30425f4f855440df17775fa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01799995
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: add55ffdb30425f4f855440df17775fa, type: 3}
