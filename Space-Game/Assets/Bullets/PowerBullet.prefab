@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 2000
   duration: 10
+  bulletDamage: 20
 --- !u!114 &2986517494265760445
 MonoBehaviour:
   m_ObjectHideFlags: 0

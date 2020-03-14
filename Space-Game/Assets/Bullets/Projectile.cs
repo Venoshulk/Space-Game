@@ -7,12 +7,13 @@ public class Projectile : MonoBehaviour
     Rigidbody rb;
     public float thrust;
     public float duration;
+    public float bulletDamage;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         OnInstance();
-        StartCoroutine(BulletDeath());
+        StartCoroutine(StartDeath());
     }
     //On collision with another object
     private void OnTriggerEnter(Collider other)
@@ -22,8 +23,10 @@ public class Projectile : MonoBehaviour
             //Cause damage -> Not yet implemented
             DestroyBullet();
         }
-        else
+        else if(other.tag == "Planet")
         {
+            //Get component of script, change health variable
+            other.gameObject.GetComponent<Planetexplode>().DoDamage(bulletDamage);
             DestroyBullet();
         }
     }
@@ -32,8 +35,8 @@ public class Projectile : MonoBehaviour
     {
         rb.AddForce(transform.forward * thrust);
     }
-    //Waits for a duration then executes a destroy function
-    IEnumerator BulletDeath()
+
+    IEnumerator StartDeath()
     {
         yield return new WaitForSeconds(duration);
         DestroyBullet();

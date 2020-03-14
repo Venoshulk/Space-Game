@@ -4,36 +4,26 @@ using UnityEngine;
 
 public class Planetexplode : MonoBehaviour
 {
-    public int planetHealth = 35;
+    public float planetHealth = 35;
 
     // Start is called before the first frame update
     void Start()
     {
         planetHealth = 35;
-        
-
     }
 
-    private void OnTriggerStay(Collider bullet)
+    public void DoDamage(float bulletDamage)
     {
-        if (planetHealth<0)
+        planetHealth -= bulletDamage;
+
+        if (planetHealth<=0)
         {
             BlowUp();
         }
     }
 
-
     void BlowUp ()
     {
         Object.Destroy(gameObject);
-        
-    }
-
-   
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
