@@ -5,6 +5,7 @@ using UnityEngine;
 public class Planetexplode : MonoBehaviour
 {
     public float planetHealth = 35;
+    private const int SCORE = 100;
 
     // Start is called before the first frame update
     void Start()
@@ -25,5 +26,6 @@ public class Planetexplode : MonoBehaviour
     void BlowUp ()
     {
         Object.Destroy(gameObject);
+        PlayerScore.ModifyScore(SCORE); 
     }
 }
