@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     private const string JUMP = "Jump";
     private const string SHIFT = "Descend";
 
+    public Animator playerAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -110,7 +112,8 @@ public class PlayerMovement : MonoBehaviour
         {
             doubleTapTimer = Time.time + doubleTapDelay;
             hasDashed = false;
-
+            playerAnimator.ResetTrigger("movingRight");
+            playerAnimator.SetTrigger("movingLeft");
             while (Time.time < doubleTapTimer && !hasDashed)
             {
                 if (Input.GetButtonDown("Left") && Time.time < doubleTapTimer)
@@ -130,7 +133,8 @@ public class PlayerMovement : MonoBehaviour
         {
             doubleTapTimer = Time.time + doubleTapDelay;
             hasDashed = false;
-
+            playerAnimator.ResetTrigger("movingLeft");
+            playerAnimator.SetTrigger("movingRight");
             while (Time.time < doubleTapTimer && !hasDashed)
             {
                 if (Input.GetButtonDown("Right") && Time.time < doubleTapTimer)
@@ -203,11 +207,15 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetButton("Left"))
         {
+            playerAnimator.ResetTrigger("movingRight");
+            playerAnimator.SetTrigger("movingLeft");
             Debug.Log("left");
             rb.AddForce(player_cam.transform.right * -1 * fuelThrust);
         }
         if (Input.GetButton("Right"))
         {
+            playerAnimator.ResetTrigger("movingLeft");
+            playerAnimator.SetTrigger("movingRight");
             Debug.Log("right");
             rb.AddForce(player_cam.transform.right * fuelThrust);
         }

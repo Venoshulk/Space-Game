@@ -16,11 +16,16 @@ public class WeaponBehavior : MonoBehaviour
     public GameObject mainCam;
     private GameObject currentBullet;
 
+    Animator gunAnimator;
+    public Animator playerAnimator;
+
     private void Start()
     {
         //Set the current settings to the default
         currentBullet = defaultBullet;
         currentShootDelay = defaultShootDelay;
+        //Set gunAnimator component
+        gunAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,6 +34,13 @@ public class WeaponBehavior : MonoBehaviour
         if (Input.GetButton("Fire1"))
         {
             FireWeapon();
+            gunAnimator.SetTrigger("isShooting");
+            playerAnimator.SetTrigger("isShooting");
+        }
+        else
+        {
+            gunAnimator.ResetTrigger("isShooting");
+            playerAnimator.ResetTrigger("isShooting");
         }
     }
 
@@ -40,9 +52,14 @@ public class WeaponBehavior : MonoBehaviour
             //Reset the shoot timer
             shootTimer = Time.time + currentShootDelay;
 
-            //create object (projectile) in front of player by using the camera position
-            Vector3 bulletOffset = new Vector3(0, shootOffSetY, shootOffSetZ);
-            Instantiate(currentBullet, transform.position + bulletOffset, mainCam.transform.rotation);
+            //create object (projectile) in front of player by using the camera position for every gun on player
+            for(int i = 0; i < transform.childCount; i++)
+            {
+                Transform gun = transform.GetChild(i);
+                Vector3 bulletOffset = new Vector3(shootOffSetX, shootOffSetY, shootOffSetZ);
+                Instantiate(currentBullet, gun.position + bulletOffset, mainCam.transform.rotation);
+            }
+            
         }
         else
         {
@@ -50,11 +67,12 @@ public class WeaponBehavior : MonoBehaviour
         }
     }
 
-    public void ChangeBullet(GameObject bullet, float shootDelay, float duration)
+    public void ChangeBullet(GameObject bullet, float shootDelay, float duration, float animationSpeed)
     {
         //Set the power up weapon into the current settings
         currentBullet = bullet;
         currentShootDelay = shootDelay;
+        gunAnimator.SetFloat("animationSpeed", animationSpeed);
 
         //Starts a function that counts down the powerup duration
         StartCoroutine(DefaultBullet(duration));
@@ -66,5 +84,6 @@ public class WeaponBehavior : MonoBehaviour
         yield return new WaitForSeconds(duration);
         currentBullet = defaultBullet;
         currentShootDelay = defaultShootDelay;
+        gunAnimator.SetFloat("animationSpeed", 1);
     }
 }
