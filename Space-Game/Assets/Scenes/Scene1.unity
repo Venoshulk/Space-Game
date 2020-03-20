@@ -206,6 +206,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 30
   m_Center: {x: 13, y: 40, z: 10}
+--- !u!135 &415549178
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415549173}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 18
+  m_Center: {x: 15, y: 38, z: 10}
 --- !u!1 &455200194
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +321,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tinker 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 63c70c230b939c64982da6462e0b167f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Planet
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 63c70c230b939c64982da6462e0b167f,
         type: 3}
@@ -519,6 +537,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tinker 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ef5937e9cf0410c45a93fed1cf2b2bc0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Planet
+      objectReference: {fileID: 0}
+    - target: {fileID: -8465054401177861898, guid: ef5937e9cf0410c45a93fed1cf2b2bc0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Planet
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: ef5937e9cf0410c45a93fed1cf2b2bc0,
         type: 3}
@@ -786,8 +814,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 457edf647ab371f41b634f8550cdc322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GravForce: 10
+  GravForce: 10000
   ObjectToPull: {fileID: 0}
+--- !u!135 &1971794032
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971794029}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 15
+  m_Center: {x: 10, y: -17, z: 12}
 --- !u!135 &1971794033
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -799,7 +840,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 30
+  m_Radius: 50
   m_Center: {x: 10, y: -15, z: 15}
 --- !u!1001 &734391094745293111
 PrefabInstance:
@@ -808,6 +849,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 734391093770330515, guid: 6c68a8e0bd0458e4cb323ccb91ae11ce,
+        type: 3}
+      propertyPath: m_Name
+      value: UI
+      objectReference: {fileID: 0}
     - target: {fileID: 734391093770330527, guid: 6c68a8e0bd0458e4cb323ccb91ae11ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -912,11 +958,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 734391093770330515, guid: 6c68a8e0bd0458e4cb323ccb91ae11ce,
-        type: 3}
-      propertyPath: m_Name
-      value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 734391095176003029, guid: 6c68a8e0bd0458e4cb323ccb91ae11ce,
         type: 3}
