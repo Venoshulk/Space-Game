@@ -57,14 +57,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetButtonDown("Descend") && Time.time < doubleTapTimer)
                 {
-                    Debug.Log("Descend with dash");
                     Vector3 forceToAdd = new Vector3(0, fuelThrust * fuelThrust * -1, 0);
                     rb.AddForce(forceToAdd);
                     hasDashed = true;
                 }
                 else
                 {
-                    Debug.Log("Descend no dash");
                     Vector3 forceToAdd = new Vector3(0, fuelThrust * -1, 0);
                     rb.AddForce(forceToAdd);
                 }
@@ -84,14 +82,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetButtonDown("Jump") && Time.time < doubleTapTimer)
                 {
-                    Debug.Log("jump with dash");
                     Vector3 forceToAdd = new Vector3(0, fuelThrust * fuelThrust, 0);
                     rb.AddForce(forceToAdd);
                     hasDashed = true;
                 }
                 else
                 {
-                    Debug.Log("jump no dash");
                     Vector3 forceToAdd = new Vector3(0, fuelThrust, 0);
                     rb.AddForce(forceToAdd);
                 }
@@ -118,13 +114,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetButtonDown("Left") && Time.time < doubleTapTimer)
                 {
-                    Debug.Log("left with dash");
                     rb.AddForce(player_cam.transform.right * -1 * fuelThrust * fuelThrust);
                     hasDashed = true;
                 }
                 else
                 {
-                    Debug.Log("left no dash");
                     rb.AddForce(player_cam.transform.right * -1 * fuelThrust);
                 }
             }
@@ -139,13 +133,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetButtonDown("Right") && Time.time < doubleTapTimer)
                 {
-                    Debug.Log("right with dash");
                     rb.AddForce(player_cam.transform.right * fuelThrust * fuelThrust);
                     hasDashed = true;
                 }
                 else
                 {
-                    Debug.Log("right no dash");
                     rb.AddForce(player_cam.transform.right * fuelThrust);
                 }
             }
@@ -159,13 +151,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetButtonDown("Forward") && Time.time < doubleTapTimer)
                 {
-                    Debug.Log("forward with dash");
                     rb.AddForce(player_cam.transform.forward * fuelThrust * fuelThrust);
                     hasDashed = true;
                 }
                 else
                 {
-                    Debug.Log("forward no dash");
                     rb.AddForce(player_cam.transform.forward * fuelThrust);
                 }
             }
@@ -179,20 +169,17 @@ public class PlayerMovement : MonoBehaviour
             {
                 if (Input.GetButtonDown("Backward") && Time.time < doubleTapTimer)
                 {
-                    Debug.Log("backward with dash");
                     rb.AddForce(player_cam.transform.forward * -1 * fuelThrust * fuelThrust);
                     hasDashed = true;
                 }
                 else
                 {
-                    Debug.Log("backward no dash");
                     rb.AddForce(player_cam.transform.forward * -1 * fuelThrust);
                 }
             }
         }
         if (Input.GetButton("Jump") && currentFuel > EMPTY)
         {
-            Debug.Log("space");
             Vector3 forceToAdd = new Vector3(0, fuelThrust, 0);
             rb.AddForce(forceToAdd);
             currentFuel = currentFuel - fuelConsumption > EMPTY ? currentFuel - fuelConsumption : EMPTY;
@@ -200,7 +187,6 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetButton("Descend") && currentFuel > EMPTY)
         {
-            Debug.Log("shift");
             Vector3 forceToAdd = new Vector3(0, fuelThrust * -1, 0);
             rb.AddForce(forceToAdd);
             currentFuel = currentFuel - fuelConsumption > EMPTY ? currentFuel - fuelConsumption : EMPTY;
@@ -209,24 +195,20 @@ public class PlayerMovement : MonoBehaviour
         {
             playerAnimator.ResetTrigger("movingRight");
             playerAnimator.SetTrigger("movingLeft");
-            Debug.Log("left");
             rb.AddForce(player_cam.transform.right * -1 * fuelThrust);
         }
         if (Input.GetButton("Right"))
         {
             playerAnimator.ResetTrigger("movingLeft");
             playerAnimator.SetTrigger("movingRight");
-            Debug.Log("right");
             rb.AddForce(player_cam.transform.right * fuelThrust);
         }
         if (Input.GetButton("Forward"))
         {
-            Debug.Log("right");
             rb.AddForce(player_cam.transform.forward * fuelThrust);
         }
         if (Input.GetButton("Backward"))
         {
-            Debug.Log("right");
             rb.AddForce(player_cam.transform.forward * -1 * fuelThrust);
         }
 

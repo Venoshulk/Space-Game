@@ -123,8 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3f348147afd4c54e8f513112fe02a8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 1500
-  duration: 5
+  thrust: 1000
+  duration: 20
 --- !u!114 &2816730127442616245
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,16 +5,21 @@ using UnityEngine;
 public class BullScript : MonoBehaviour
 {
     private Rigidbody rb;
+
+    public float thrust;
     // Start is called before the first frame update
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerStay(Collider other)
     {
-        Vector3 force = Vector3(1, 1, 1);
-        rb.AddForce();
+        if (other.tag == "Player")
+        {
+            Debug.Log("DETECTED");
+            rb.AddForce(transform.forward * thrust * -1);
+        }
     }
+
 }
