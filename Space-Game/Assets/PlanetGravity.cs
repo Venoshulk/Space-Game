@@ -6,7 +6,12 @@ public class PlanetGravity2 : MonoBehaviour
 {
     public int GravForce;
 
-    public GameObject ObjectToPull;
+    private GameObject ObjectToPull;
+
+    private void Start()
+    {
+        ObjectToPull = GameObject.FindGameObjectWithTag("Player");
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject == ObjectToPull)

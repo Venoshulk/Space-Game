@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GravForce: 10
-  ObjectToPull: {fileID: 1645097583}
+  ObjectToPull: {fileID: 0}
 --- !u!135 &415549177
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -787,7 +787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GravForce: 10
-  ObjectToPull: {fileID: 1645097583}
+  ObjectToPull: {fileID: 0}
 --- !u!135 &1971794033
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -808,11 +808,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 734391093770330515, guid: 6c68a8e0bd0458e4cb323ccb91ae11ce,
-        type: 3}
-      propertyPath: m_Name
-      value: UI
-      objectReference: {fileID: 0}
     - target: {fileID: 734391093770330527, guid: 6c68a8e0bd0458e4cb323ccb91ae11ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -917,6 +912,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 734391093770330515, guid: 6c68a8e0bd0458e4cb323ccb91ae11ce,
+        type: 3}
+      propertyPath: m_Name
+      value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 734391095176003029, guid: 6c68a8e0bd0458e4cb323ccb91ae11ce,
         type: 3}
@@ -1123,6 +1123,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2150163436686169333, guid: 2d344f24fa802954b9fcc73fcaa135f1,
         type: 3}
+    - target: {fileID: 6058932017238534288, guid: 2abffe98289e2a540889e08b8a7b6102,
+        type: 3}
+      propertyPath: sens
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3132568102204398022, guid: 2abffe98289e2a540889e08b8a7b6102, type: 3}
     - {fileID: 0}
@@ -1199,5 +1204,15 @@ PrefabInstance:
       propertyPath: ObjectToPull
       value: 
       objectReference: {fileID: 1645097583}
+    - target: {fileID: 6577129573609351772, guid: 1b2538423023eda41bb3a75fc6effe1a,
+        type: 3}
+      propertyPath: GravForce
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577129573609351762, guid: 1b2538423023eda41bb3a75fc6effe1a,
+        type: 3}
+      propertyPath: m_Radius
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b2538423023eda41bb3a75fc6effe1a, type: 3}
