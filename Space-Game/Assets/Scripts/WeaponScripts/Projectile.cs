@@ -20,10 +20,7 @@ public class Projectile : MonoBehaviour
         if(other.tag == "Enemy")
         {
             //Cause damage -> Not yet implemented
-            DestroyBullet();
-        }
-        else
-        {
+            Debug.Log(other.gameObject.name);
             DestroyBullet();
         }
     }
