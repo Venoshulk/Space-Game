@@ -48,7 +48,6 @@ public class WeaponBehavior : MonoBehaviour
     {
         if (Time.time >= shootTimer)
         {
-            Debug.Log("Shoot");
             //Reset the shoot timer
             shootTimer = Time.time + currentShootDelay;
 
@@ -63,7 +62,6 @@ public class WeaponBehavior : MonoBehaviour
         }
         else
         {
-            Debug.Log("Wait!");
         }
     }
 

@@ -20,8 +20,13 @@ public class Projectile : MonoBehaviour
         if(other.tag == "Enemy")
         {
             //Cause damage -> Not yet implemented
+<<<<<<< HEAD:Space-Game/Assets/Bullets/Projectile.cs
             Debug.Log("Yes!");
             other.GetComponent<Health>().Damage(789);
+=======
+            Debug.Log(other.gameObject.name);
+            DestroyBullet();
+>>>>>>> 1d1eaf028b21706578fd9e473d8f221e018451b6:Space-Game/Assets/Scripts/WeaponScripts/Projectile.cs
         }
         DestroyBullet();
     }
