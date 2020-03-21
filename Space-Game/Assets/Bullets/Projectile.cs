@@ -20,12 +20,10 @@ public class Projectile : MonoBehaviour
         if(other.tag == "Enemy")
         {
             //Cause damage -> Not yet implemented
-            DestroyBullet();
+            Debug.Log("Yes!");
+            other.GetComponent<Health>().Damage(789);
         }
-        else
-        {
-            DestroyBullet();
-        }
+        DestroyBullet();
     }
     //On creation function
     void OnInstance()

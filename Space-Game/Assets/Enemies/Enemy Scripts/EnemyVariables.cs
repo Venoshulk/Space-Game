@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyVariables : MonoBehaviour
+public class EnemyVariables : Health
 {
     // Start is called before the first frame update
     void Start()

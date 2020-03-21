@@ -25,10 +25,21 @@ public class Health : MonoBehaviour
         if (currentHealth <= DEAD)
         {
             //Dead code here
+            Debug.Log("Retired");
         }
         else
         {
             healthBox.text = currentHealth.ToString();
         }
+    }
+
+    public void Damage(float damage) 
+    {   Debug.Log("Damage : " + damage);
+        currentHealth -= damage;
+        Debug.Log("After: " + currentHealth);
+    }
+
+    private float getCurrentHealth() 
+    {   return currentHealth;
     }
 }
