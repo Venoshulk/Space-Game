@@ -25,6 +25,10 @@ public class Health : MonoBehaviour
         CheckHealth();
     }
 
+    public float getHealth()
+    {   return currentHealth;
+    }
+
     public void Damage(float damage) 
     {   
         Debug.Log("Damage : " + damage);

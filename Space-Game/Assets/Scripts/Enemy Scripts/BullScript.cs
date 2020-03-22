@@ -49,6 +49,9 @@ public class BullScript : MonoBehaviour
             {
                 //Do Damage based on velocity
                 float damage = (rb.velocity * rb.mass).magnitude;
+                Debug.Log("Player's health" + other.gameObject.GetComponent<Health>().getHealth());
+                other.gameObject.GetComponent<Health>().Damage(damage);
+                Debug.Log("Player's health" + other.gameObject.GetComponent<Health>().getHealth());
                 //Damage script goes here
                 Debug.Log(damage);
                 //Explode
