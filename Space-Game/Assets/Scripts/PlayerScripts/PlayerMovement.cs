@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
             while (Time.time < doubleTapTimer && !hasDashed)
             {
-                if (Input.GetButtonDown("Descend") && Time.time < doubleTapTimer)
+                if (Input.GetButtonDown(SHIFT) && Time.time < doubleTapTimer)
                 {
                     Vector3 forceToAdd = new Vector3(0, fuelThrust * fuelThrust * -1, 0);
                     rb.AddForce(forceToAdd);

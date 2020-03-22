@@ -11,6 +11,8 @@ public class BullScript : MonoBehaviour
     public float pointOfContact;
     public float slowDown;
 
+    public GameObject explosionEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,6 +68,8 @@ public class BullScript : MonoBehaviour
 
     void Explode()
     {
+        Instantiate(explosionEffect, transform.position, transform.rotation);
+
         Destroy(gameObject);
     }
 
