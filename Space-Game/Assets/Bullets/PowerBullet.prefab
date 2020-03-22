@@ -93,7 +93,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &5742941631826034334
 Rigidbody:
@@ -125,6 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrust: 2000
   duration: 10
+  pointOfContact: 5
+  bulletDamage: 20
 --- !u!114 &2986517494265760445
 MonoBehaviour:
   m_ObjectHideFlags: 0

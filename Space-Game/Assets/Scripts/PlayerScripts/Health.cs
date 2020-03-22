@@ -25,6 +25,7 @@ public class Health : MonoBehaviour
         if (currentHealth <= DEAD)
         {
             //Dead code here
+            Death();
             Debug.Log("Retired");
         }
         else
@@ -34,9 +35,15 @@ public class Health : MonoBehaviour
     }
 
     public void Damage(float damage) 
-    {   Debug.Log("Damage : " + damage);
+    {   
+        Debug.Log("Damage : " + damage);
         currentHealth -= damage;
         Debug.Log("After: " + currentHealth);
+    }
+
+    private void Death()
+    {
+        Destroy(gameObject);
     }
 
     private float getCurrentHealth() 
