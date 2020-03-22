@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
     {
         maxHealth = 100.0f;
         currentHealth = maxHealth;
-        healthBox = GetComponent<Text>();
+        healthBox = GameObject.Find("HealthText").GetComponent<Text>();
     }
 
     // Update is called once per frame
