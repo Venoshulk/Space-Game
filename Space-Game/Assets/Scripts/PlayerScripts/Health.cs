@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class Health : MonoBehaviour
 {
     public float maxHealth;
-    private float currentHealth;
-    private const float DEAD = 0.0f;
+    protected float currentHealth;
+    protected const float DEAD = 0.0f;
     private Text healthBox;
 
     // Start is called before the first frame update
@@ -22,6 +22,28 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckHealth();
+    }
+
+    public void Damage(float damage) 
+    {   
+        Debug.Log("Damage : " + damage);
+        currentHealth -= damage;
+        Debug.Log("After: " + currentHealth);
+    }
+
+    protected void Death()
+    {
+        Destroy(gameObject);
+    }
+
+    protected float getCurrentHealth() 
+    {  
+        return currentHealth;
+    }
+
+    protected virtual void CheckHealth()
+    {
         if (currentHealth <= DEAD)
         {
             //Dead code here
@@ -32,21 +54,5 @@ public class Health : MonoBehaviour
         {
             healthBox.text = currentHealth.ToString();
         }
-    }
-
-    public void Damage(float damage) 
-    {   
-        Debug.Log("Damage : " + damage);
-        currentHealth -= damage;
-        Debug.Log("After: " + currentHealth);
-    }
-
-    private void Death()
-    {
-        Destroy(gameObject);
-    }
-
-    private float getCurrentHealth() 
-    {   return currentHealth;
     }
 }

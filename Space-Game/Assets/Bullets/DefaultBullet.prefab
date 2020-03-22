@@ -126,7 +126,7 @@ MonoBehaviour:
   thrust: 1000
   duration: 20
   pointOfContact: 3
-  bulletDamage: 10
+  bulletDamage: 50
 --- !u!114 &2816730127442616245
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class EnemyVariables : Health
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
+        maxHealth = 100.0f;
+        currentHealth = maxHealth;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        CheckHealth();
+    }
+    protected override void CheckHealth()
+    {
+        if (currentHealth <= DEAD)
+        {
+            //Dead code here
+            Death();
+            Debug.Log("Retired");
+        }
     }
 }
