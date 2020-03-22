@@ -19,6 +19,7 @@ public class EnemyVariables : Health
         {
             //Dead code here
             Death();
+            Debug.Log("AWOOOOOOOOOOOOOGA");
             Debug.Log("Retired");
         }
     }
