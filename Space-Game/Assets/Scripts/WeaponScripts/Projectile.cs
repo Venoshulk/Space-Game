@@ -17,7 +17,7 @@ public class Projectile : MonoBehaviour
         StartCoroutine(BulletDeath());
     }
     //On collision with another object
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Enemy")
         {
@@ -34,7 +34,7 @@ public class Projectile : MonoBehaviour
         }
     }
     //On creation function
-    void OnInstance()
+    protected void OnInstance()
     {
         rb.AddForce(transform.forward * thrust);
     }
@@ -45,7 +45,7 @@ public class Projectile : MonoBehaviour
         DestroyBullet();
     }
 
-    void DestroyBullet()
+    protected void DestroyBullet()
     {
         Object.Destroy(gameObject);
     }
